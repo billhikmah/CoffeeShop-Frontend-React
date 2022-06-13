@@ -1,0 +1,5 @@
+export const counterUpAction = "COUNTER_UP"
+export const counterDownAction = "COUNTER_DOWN"
+export const addToCartAction = "ADDTOCART"
+export const loginAction = "SAVE_TOKEN"
+export const logoutAction = "DELETE_TOKEN"

@@ -1,0 +1,128 @@
+
+.component-footer{
+    height: 450px;
+    top: 1100px;
+
+    background: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+}
+.component-footer-space-1{
+    flex:2;
+}
+.component-footer-content {
+    flex: 6;
+
+    height: 233px;
+    margin: 0 10vw 0 10vw;
+    width: 80vw;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.component-footer-space-2{
+    flex:1;
+}
+.component-footer-content-1{
+    flex: 11;
+    position: relative;
+}
+.component-footer-content-2{
+    flex: 2;
+    margin-right: 10px;
+}
+.component-footer-content-3{
+    flex: 2;
+}
+.component-footer-list {
+    margin:10px 0px 10px 0px;
+    height: 30px;
+    
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #4F5665;
+    padding-left: 10px;
+}
+.component-footer-list:hover{
+    cursor: pointer;
+}
+.component-footer-list:active{
+    cursor: pointer;
+    background: rgb(170, 168, 168);
+    border-radius: 10px;
+}
+.component-footer-list-title{
+    margin:10px 0px 10px 0px;
+    height: 30px;
+    
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #0B132A;
+    padding-left: 10px;
+}
+.component-footer-list-title:hover{
+    cursor: pointer;
+}
+.component-footer-list-title:active{
+    background: rgb(170, 168, 168);
+    border-radius: 10px;
+}
+.component-footer-image-3 {
+    width: 30px;
+    position: relative;
+}
+.component-footer-title-2 {
+    position: relative;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+
+    padding: 10px;
+    color: rgba(11, 19, 42, 1);
+    display: inline;
+}
+.component-footer-desc{
+    position: relative;
+    width: 320px;;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #4F5665;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.component-footer-logo{
+    display: inline;
+    height: 30px;
+    object-fit: cover;
+}
+.component-footer-logo:hover{
+    cursor: pointer;
+}
+.component-footer-logo:active{
+    cursor: pointer;
+}
+.component-footer-copy-right{
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #AFB5C0;
+
+    margin-top: 20px;
+}

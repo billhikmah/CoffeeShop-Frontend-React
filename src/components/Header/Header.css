@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Rubik:wght@500&display=swap');
+
+.background-white{
+    background-color: white;
+}
+.font-rubik{
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+.font-poppins{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.color-white{
+    color: #FFFFFF;
+}
+.color-black{
+    color: #0B132A;
+}
+.color-grey{
+    color: #4F5665;
+}
+.header-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    background-color: white;
+    border-bottom: 0.5px solid rgba(159, 159, 159, 1);
+}
+.navigation-1{
+    flex:1;
+}
+.navigation-1-content{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 100px;
+}
+.title-1 {
+    position: relative;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+
+    padding: 10px;
+    color: rgba(11, 19, 42, 1);
+    display: inline;
+}
+.title-1:hover{    
+    cursor: pointer;
+    background: rgb(170, 168, 168);
+    border-radius: 20px;
+}
+.title-1:active{    
+    cursor: pointer;
+    background: rgb(88, 87, 87);
+    border-radius: 20px;
+}
+.navigation-2{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.navigation-2-content {
+    flex: 1;
+    margin:10px 0px 10px 0px;
+    height: 30px;
+    
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #4F5665;
+    text-decoration: none;
+}
+.navigation-2-content:hover{
+    cursor: pointer;
+    color: #6A4029;
+}
+.navigation-2-content:active{
+    cursor: pointer;
+    background: rgb(170, 168, 168);
+    color:rgb(0, 0, 0);
+    border-radius: 10px;
+    color: #6A4029;
+}
+.navigation-3{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+.navigation-2-content-clicked {
+    flex: 1;
+    margin:10px 0px 10px 0px;
+    height: 30px;
+    
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #6A4029;
+    text-decoration: none;
+}
+.navigation-2-content-clicked:hover{
+    color: #6A4029;
+}
+.navigation-2-content-clicked:active{
+    color: #6A4029;
+}
+
+.search-bar-container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+}
+.search-bar-logo{
+    position: absolute;
+    width: 20px;
+    margin-left: 15px;
+}
+.search-bar{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(0, 0, 0);
+    background: #EFEEEE;
+    border-radius: 30px;
+    border: none;
+    width: 180px;
+    height: 35px;
+    padding-left: 45px;
+}
+.search-bar::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(170, 168, 168);
+    padding: 6px 0px 12px 0px;
+    
+}
+.navigation-3-content{
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    padding-top: 13px;
+    border-radius: 50px;
+    width: 150px;
+    height: 45px;
+}
+.header-login-navigation-3{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-right: 100px;
+
+}
+.header-login-navigation-3-content{
+    /* flex: 1; */
+    margin: 0px 0px 0px 20px;
+    /* padding-left: 10px; */
+    display: flex;
+    text-decoration: none;
+}
+.header-login-navigation-3-content:hover{
+    cursor: pointer;
+}
+.header-login-navigation-3-content:active{
+    cursor: pointer;
+}
+.header-login-image-1{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.signup-button{
+    color: #6A4029;
+    background: rgba(255, 186, 51, 1);
+    text-decoration: none;
+}
+.signup-button:hover{
+    cursor: pointer;
+}
+.signup-button:active{
+    cursor: pointer;
+}
+.login-button{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.login-button:hover{
+    cursor: pointer;
+}
+.login-button:active{
+    cursor: pointer;
+}
