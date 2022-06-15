@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Header.css';
 import { Link } from "react-router-dom";
 import withNavigate from "../../helpers/withNavigate";
+import getUser from "../../components/Services/getUserInfo";
 
 
 export class Header extends Component  {
@@ -24,14 +25,22 @@ export class Header extends Component  {
       keyword: event.target.value
     })
   }
+  getProfile = () => {
+    getUser()
+    .then((result) => {
+      this.setState({
+        profilePicture: result.data.data.picture,
+      })
+    })
+    .catch((error) => {
+        console.log(error.response) })
+}
   componentDidMount(){
     const pageTitle = this.props.pageTitle
-    const profilePicture = localStorage.getItem("header-profile-picture")
-    console.log(profilePicture)
     this.setState({
-      profilePicture : profilePicture,
       pageTitle: pageTitle
     })
+    this.getProfile()
   }
   render() {
     return (
