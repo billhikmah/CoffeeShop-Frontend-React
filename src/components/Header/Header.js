@@ -27,6 +27,7 @@ export class Header extends Component  {
   componentDidMount(){
     const pageTitle = this.props.pageTitle
     const profilePicture = localStorage.getItem("header-profile-picture")
+    console.log(profilePicture)
     this.setState({
       profilePicture : profilePicture,
       pageTitle: pageTitle
