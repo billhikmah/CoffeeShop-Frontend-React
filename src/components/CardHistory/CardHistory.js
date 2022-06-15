@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 import withNavigate from "../../helpers/withNavigate";
 import { getDetails } from "../Services/getProduct";
 

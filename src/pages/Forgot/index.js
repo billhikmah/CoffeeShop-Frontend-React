@@ -11,6 +11,9 @@ export class Forgot extends Component {
         isError: "false",
         errorMessage: ""
     }
+    componentDidMount(){
+        window.scrollTo(0, 0)
+    }
   render() {
     return (
         <div class="forgot-container col-s-12 col-m-12 col-l-12 col-xl-12">

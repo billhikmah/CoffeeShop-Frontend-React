@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import "./Product_details.css"
-import { Link } from "react-router-dom";
-import axios from 'axios';
 import { Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -63,6 +61,7 @@ export class Product_details extends Component {
                 totalItems: this.props.cartContainer.totalItems
             })
         }
+        window.scrollTo(0, 0)
 
     }
   render() {
@@ -184,7 +183,7 @@ export class Product_details extends Component {
                                     <div className="box-items-details-count">
                                         <div className="count-button" onClick={() => {
                                             let newTotal = this.state.totalItems;
-                                            if(this.state.totalItems != 10){
+                                            if(this.state.totalItems !== 10){
                                                 newTotal = this.state.totalItems + 1;
                                             }
                                             this.setState({
@@ -193,7 +192,7 @@ export class Product_details extends Component {
                                         }}>+</div>{this.state.totalItems}
                                         <div className="count-button" onClick={() => {
                                             let newTotal = this.state.totalItems;
-                                            if(this.state.totalItems != 1){
+                                            if(this.state.totalItems !== 1){
                                                 newTotal = this.state.totalItems - 1;
                                                 return this.setState({
                                                     totalItems: newTotal,
@@ -220,12 +219,12 @@ export class Product_details extends Component {
                                 date: this.state.date,
                                 id: this.state.id
                             }))
-                            {!this.state.sizeChosen || !this.state.deliveryChosen || !this.state.date ?
-                                this.setState({
+                            if(!this.state.sizeChosen || !this.state.deliveryChosen || !this.state.date){
+                                return this.setState({
                                     productCheckModal: true,
-                                }):
-                                navigate("/payment")
+                                })
                             }
+                            navigate("/payment")
                             
                         }}>CHECKOUT</div>
                     </section>:

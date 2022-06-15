@@ -3,7 +3,7 @@ import withNavigate from "../../helpers/withNavigate";
 import withSearchParams from "../../helpers/withSearchParams";
 
 function SortForm(props) {
-    const {navigate, searchParams, setSearchParams} = props
+    const {searchParams, setSearchParams} = props
     return (
         <div className="product-sort-container">
             <form action="/action_page.php" className="product-sort">

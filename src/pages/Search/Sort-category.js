@@ -12,7 +12,6 @@ function SortCategory(props) {
             const keyword = searchParams.get("keyword");
             const sort = searchParams.get("sort");
             const order = searchParams.get("order");
-            const page = searchParams.get("page")
             if (e.target.value === "1"){
                 navigate(`/search?keyword=${keyword}&category=&sort=${sort}&order=${order}&page=1`)
             }

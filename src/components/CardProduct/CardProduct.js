@@ -1,6 +1,5 @@
 import React from 'react'
 import './CardProduct.css';
-import { Link } from "react-router-dom";
 import withNavigate from "../../helpers/withNavigate";
 
 function CardProduct(props) {

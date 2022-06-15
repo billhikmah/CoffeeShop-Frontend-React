@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import "./Profile.css"
-import { Link } from "react-router-dom";
-import axios from 'axios';
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -112,6 +110,7 @@ export class Profile extends Component {
                 isLogin: true
             })
         }
+        window.scrollTo(0, 0)
         this.getProfile()
         
     }

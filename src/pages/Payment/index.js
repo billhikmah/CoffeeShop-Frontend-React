@@ -70,6 +70,7 @@ export class Payment extends Component {
         }
         this.getUserInfo()
         this.calculatePrice(cart.price, cart.totalItems)
+        window.scrollTo(0, 0)
     }
     componentDidUpdate(){
         

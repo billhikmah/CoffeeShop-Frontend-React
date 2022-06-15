@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./Auth.css"
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import axios from 'axios';
 import Footer from "../../components/Footer/Footer";
 import { Modal } from 'react-bootstrap';
@@ -17,6 +17,9 @@ export class Auth extends Component {
         errorMessage: "",
         successMessage: "",
         showModal: false
+    }
+    componentDidMount(){
+        window.scrollTo(0, 0)
     }    
         
     render() {

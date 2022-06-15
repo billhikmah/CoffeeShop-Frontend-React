@@ -57,6 +57,7 @@ export class Product extends Component {
                 isLogin: true
             })
         }
+        window.scrollTo(0, 0)
         const category = this.props.searchParams.get("category") || ""
         const sort = this.props.searchParams.get("sort") || "name"
         const order = this.props.searchParams.get("order") || "asc"
@@ -357,6 +358,7 @@ export class Product extends Component {
                                         order: this.state.order,
                                         page: next
                                     })
+                                    window.scrollTo(0,0)
                                 }}>
                                     Next
                                 </div>:

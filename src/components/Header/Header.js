@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Header.css';
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import withNavigate from "../../helpers/withNavigate";
 
 
@@ -33,7 +33,6 @@ export class Header extends Component  {
     })
   }
   render() {
-    const {navigate} = this.props
     return (
       <nav className="header-navigation">
       <div className="navigation-1">
@@ -66,7 +65,7 @@ export class Header extends Component  {
       `{this.props.isLogin === true ?
       <div className="header-login-navigation-3 ">
         <div className="search-bar-container">
-          <img src={require("../../assets/search.png")} className="search-bar-logo"/>
+          <img src={require("../../assets/search.png")} className="search-bar-logo" alt="sear bar logo"/>
           <form onSubmit={this.searchFormSubmit}>
             <input type="text" className="search-bar" placeholder="Search" value={this.state.keyword}
             onChange={this.searchFormChange}/>

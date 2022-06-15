@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import "./History.css"
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import getHistory from "../../components/Services/getHistory";
@@ -35,6 +34,7 @@ export class History extends Component {
             })
         }
         this.getMyHistory()
+        window.scrollTo(0, 0)
     }
     render() {
         console.log(this.state.myHistory)

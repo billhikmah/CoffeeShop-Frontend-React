@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import "./search.css"
-import { Link } from "react-router-dom";
-import axios from 'axios';
+import "./search.css";
 
 // import withParams from "../../helpers/withParams";
 import withSearchParams from '../../helpers/withSearchParams';
@@ -13,7 +11,7 @@ import CardProduct from "../../components/CardProduct/CardProduct";
 import SortForm from "./Sort-form";
 import SortCategory from "./Sort-category";
 
-import {getSearchProduct, getFavoriteProduct} from "../../components/Services/getProduct";
+import {getSearchProduct} from "../../components/Services/getProduct";
 
 export class Search extends Component {
     state = {
@@ -45,6 +43,7 @@ export class Search extends Component {
     };
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         
         if(localStorage.getItem("token")){
             this.setState({
@@ -73,8 +72,7 @@ export class Search extends Component {
     
     
   render() {
-      const {allProducts, favoriteProducts, coffeeProducts, nonCoffeeProducts, foodProducts} = this.state;
-      const {navigate, searchParams, setSearchParams} = this.props;
+      const {navigate, searchParams} = this.props;
       
     return (
         <div className="background-white">

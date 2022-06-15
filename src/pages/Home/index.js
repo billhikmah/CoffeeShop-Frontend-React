@@ -2,10 +2,8 @@ import './Home.css';
 import React, { Component } from 'react';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer"
-import { Link } from "react-router-dom";
 // import withParams from '../../helpers/withParams';
 import withSearchParams from '../../helpers/withSearchParams';
-import axios from 'axios';
 
 
 export class Home extends Component {
@@ -20,6 +18,7 @@ export class Home extends Component {
                 isLogin: true
             })
         }
+        window.scrollTo(0, 0)
     }
 
 

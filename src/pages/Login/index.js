@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "./Login.css"
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import withNavigate from "../../helpers/withNavigate";
 import accountLogin from '../../components/Services/login';
 
@@ -35,12 +34,12 @@ export class Login extends Component {
     }
     componentDidMount(){
         console.log("cdm")
+        window.scrollTo(0, 0)
     }
     componentDidUpdate(){
         console.log("cdu")
     }
   render() {
-    const { navigate } = this.props;
     return (
         <div className="col-s-12 col-m-12 col-l-12 col-xl-12">
             <section className="login-container cols-s-12 col-m-12 col-l-12 col-xl-12">
