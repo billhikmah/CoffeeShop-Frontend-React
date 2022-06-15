@@ -33,12 +33,9 @@ export class Login extends Component {
         })
     }
     componentDidMount(){
-        console.log("cdm")
         window.scrollTo(0, 0)
     }
-    componentDidUpdate(){
-        console.log("cdu")
-    }
+    componentDidUpdate(){}
   render() {
     return (
         <div className="col-s-12 col-m-12 col-l-12 col-xl-12">

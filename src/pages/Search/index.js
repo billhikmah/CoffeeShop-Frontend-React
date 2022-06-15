@@ -32,7 +32,6 @@ export class Search extends Component {
             });
         })
         .catch((err) => {
-            console.log("Error", err);
             this.setState({
                 ...this.state.searchProducts,
                 searchProducts: [],

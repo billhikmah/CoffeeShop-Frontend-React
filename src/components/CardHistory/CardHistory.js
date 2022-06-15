@@ -11,7 +11,6 @@ export class CardHistory extends Component {
     getInfoProduct= (product_id) => {
         getDetails(product_id)
         .then((res) => {
-            console.log(res.data.data[0].picture)
             this.setState({
                 name: res.data.data[0].name,
                 picture: res.data.data[0].picture

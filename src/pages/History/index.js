@@ -37,7 +37,6 @@ export class History extends Component {
         window.scrollTo(0, 0)
     }
     render() {
-        console.log(this.state.myHistory)
         return (<div >
             <Header isLogin={this.state.isLogin} pageTitle={this.state.pageTitle}/>
             <main class="history-main">

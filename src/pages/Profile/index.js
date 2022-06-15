@@ -35,7 +35,6 @@ export class Profile extends Component {
     getProfile = () => {
         getUser()
         .then((result) => {
-            console.log(result)
             this.setState({
               address: result.data.data.address,
               address_show: result.data.data.address,

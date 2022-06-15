@@ -5,7 +5,6 @@ export  async function getProduct(category = "", sort = "name", order="asc", pag
   try {
     const token = `Bearer ${localStorage.getItem("token")}`;
     const URL = `http://localhost:8080/products/?category_id=${category}&sort=${sort}&order=${order}&limit=12&page=${page}`;
-    console.log(URL)
     const result = await axios.get(URL, {
       headers: {
           "x-access-token": `${token}`,
@@ -36,7 +35,6 @@ export  async function getSearchProduct(category = "", sort = "name", order="asc
   try {
     const token = `Bearer ${localStorage.getItem("token")}`;
     const URL = `http://localhost:8080/products/?category_id=${category}&sort=${sort}&order=${order}&limit=4&page=${page}&name=${name}`;
-    console.log(URL)
     const result = await axios.get(URL, {
       headers: {
           "x-access-token": `${token}`,
@@ -53,7 +51,6 @@ export async function getDetails(id) {
   try {
     const token = `Bearer ${localStorage.getItem("token")}`;
     const URL = `http://localhost:8080/products/details/${id}`;
-    console.log(URL)
     const result = await axios.get(URL, {
       headers: {
           "x-access-token": `${token}`,

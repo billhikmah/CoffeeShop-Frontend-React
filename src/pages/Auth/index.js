@@ -127,19 +127,17 @@ export class Auth extends Component {
                                     phone: phone
                                 }
                                 await axios.post("http://localhost:8080/auth/new", body)
-                                .then((result) => {console.log(result)
+                                .then((result) => {
                                 this.setState({
                                     isError: false,
                                     successMessage: "Sign up success, please login.",
                                     showModal: true
                                 })})
                                 .catch((error) => {
-                                    console.log(error.response.data.err.msg)
                                     this.setState({
                                         isError: true,
                                         errorMessage: error.response.data.err.msg
                                     })
-                                    console.log(this.state.isError)
                                 })
                             }}>
                                 Sign Up
