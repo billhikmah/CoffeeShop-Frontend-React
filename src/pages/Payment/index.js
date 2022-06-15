@@ -89,7 +89,7 @@ export class Payment extends Component {
                                 <div class="summary-product" onClick={() => {
                                     navigate(`/product/details/${this.state.cart.id}`)
                                 }}>
-                                    <div><img src={`http://localhost:8080${this.state.cart.picture}`} alt="food-pic" class="summary-product-pic"/></div>
+                                    <div><img src={`https://starbills.herokuapp.com${this.state.cart.picture}`} alt="food-pic" class="summary-product-pic"/></div>
                                     <div class="summary-product-details">
                                         <div>{this.state.cart.name}</div>
                                         <div>x {this.state.cart.totalItems}</div>

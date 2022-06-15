@@ -122,7 +122,7 @@ export class Profile extends Component {
                     <div className="profile-page-title">User Profile</div>
                     <div className="profile-profile-container">
                         <div className="profile-side-tab">
-                            <div className="profile-image-container"><img className="profile-image-2" src={`http://localhost:8080${this.state.picture}`} alt="profile"/></div>
+                            <div className="profile-image-container"><img className="profile-image-2" src={`https://starbills.herokuapp.com${this.state.picture}`} alt="profile"/></div>
                             <div className="profile-name">{this.state.display_name_show}</div>
                             <div className="profile-email">{this.state.emailShow}</div>
                             <div className={this.state.isEdit === true ? "profile-choose-photo" : "hide"}>Choose photo</div>

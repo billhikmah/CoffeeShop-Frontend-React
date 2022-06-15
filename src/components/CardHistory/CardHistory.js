@@ -29,7 +29,7 @@ export class CardHistory extends Component {
         return (
             <div class="history-box">
                 <div>
-                    <img src={`http://localhost:8080${this.state.picture}`} alt="food-pic" class="history-pic"/>
+                    <img src={`https://starbills.herokuapp.com${this.state.picture}`} alt="food-pic" class="history-pic"/>
                 </div>
                 <div class="history-details">
                     <div class="history-product-name">{this.state.name}</div>

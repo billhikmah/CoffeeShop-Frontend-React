@@ -126,7 +126,7 @@ export class Auth extends Component {
                                     password: password,
                                     phone: phone
                                 }
-                                await axios.post("http://localhost:8080/auth/new", body)
+                                await axios.post("https://starbills.herokuapp.com/auth/new", body)
                                 .then((result) => {
                                 this.setState({
                                     isError: false,

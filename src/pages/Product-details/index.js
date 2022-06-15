@@ -80,7 +80,7 @@ export class Product_details extends Component {
                 <div className="container-product-details">
                     <div className="container-1">
                         <div>
-                            <img src={`http://localhost:8080${this.state.picture}`} alt="food-pic" className="product-details-pic"/>
+                            <img src={`https://starbills.herokuapp.com${this.state.picture}`} alt="food-pic" className="product-details-pic"/>
                         </div>
                         <div className="product-details-name">{this.state.name}</div>
                         <div className="product-details-price">IDR {this.state.price}</div>
@@ -163,7 +163,7 @@ export class Product_details extends Component {
                 {this.state.sizeChosen  ?
                     <section className="box-items">
                         <div className="box-items-details">
-                            <div className="box-items-details-pic"><img src={`http://localhost:8080${this.state.picture}`} alt="food-pic" className="items-pic"/></div>
+                            <div className="box-items-details-pic"><img src={`https://starbills.herokuapp.com${this.state.picture}`} alt="food-pic" className="items-pic"/></div>
                             <div className="box-items-details-transaction">
                                 <div className="item-name">{this.state.name}</div>
                                 
