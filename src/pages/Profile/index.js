@@ -57,7 +57,6 @@ export class Profile extends Component {
               sex_id: result.data.data.sex_id,
               sex_id_show: result.data.data.sex_id
             })
-
         })
         .catch((error) => {
             console.log(error.response) })
