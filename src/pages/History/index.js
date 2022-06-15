@@ -39,12 +39,12 @@ export class History extends Component {
     render() {
         return (<div >
             <Header isLogin={this.state.isLogin} pageTitle={this.state.pageTitle}/>
-            <main class="history-main">
+            <main className="history-main">
                 <div className="history-title-section">
-                    <div class="history-page-title">Let’s see what you have bought!</div>
-                    <div class="history-page-sub-title">Long press to delete item</div>  
+                    <div className="history-page-title">Let’s see what you have bought!</div>
+                    <div className="history-page-sub-title">Long press to delete item</div>  
                 </div>    
-                <div class="history-container">
+                <div className="history-container">
 
                     {this.state.myHistory.map((item) => {
                         return (
