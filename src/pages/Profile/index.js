@@ -176,7 +176,7 @@ export class Profile extends Component {
                             <div className={this.state.isEdit === true ? "profile-save" : "hide"}
                             onClick={(e)=>{
                                 e.preventDefault();
-                                const image = this.state.previewSource;
+                                // const image = this.state.previewSource;
 
                                 // const body = {
                                 //     address: this.state.address_show,
