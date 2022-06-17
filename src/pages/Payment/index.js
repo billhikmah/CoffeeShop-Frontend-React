@@ -80,17 +80,17 @@ export class Payment extends Component {
         return (
             <div >
                 <Header isLogin={this.state.isLogin} pageTitle={this.state.pageTitle}/>
-                <main class="payment-main">
-                    <div class="page-title">Checkout your item now!</div>
-                    <div class="payment-container">
+                <main className="payment-main">
+                    <div className="page-title">Checkout your item now!</div>
+                    <div className="payment-container">
                         {this.state.isProductAdded ?
-                            <div class="summary">
-                                <div class="summary-title">Order Summary</div>
-                                <div class="summary-product" onClick={() => {
+                            <div className="summary">
+                                <div className="summary-title">Order Summary</div>
+                                <div className="summary-product" onClick={() => {
                                     navigate(`/product/details/${this.state.cart.id}`)
                                 }}>
-                                    <div><img src={`https://starbills.herokuapp.com${this.state.cart.picture}`} alt="food-pic" class="summary-product-pic"/></div>
-                                    <div class="summary-product-details">
+                                    <div><img src={`https://starbills.herokuapp.com${this.state.cart.picture}`} alt="food-pic" className="summary-product-pic"/></div>
+                                    <div className="summary-product-details">
                                         <div>{this.state.cart.name}</div>
                                         <div>x {this.state.cart.totalItems}</div>
                                         {this.state.cart.size === "R" ?
@@ -106,7 +106,7 @@ export class Payment extends Component {
                                     </div>
                                     <div>IDR {this.state.cart.price}</div>
                                 </div>
-                                <div class="summary-calculation">
+                                <div className="summary-calculation">
                                     <div>SUBTOTAL</div>
                                     <div>IDR {parseInt(this.state.cart.price)*parseInt(this.state.cart.totalItems)}</div>
                                     <div>TAX & FEES</div>
@@ -114,43 +114,43 @@ export class Payment extends Component {
                                     <div>FEES SHIPPING</div>
                                     <div>IDR 10000</div>
                                 </div>
-                                <div class="summary-total">
+                                <div className="summary-total">
                                     <div>TOTAL</div>
                                     <div>IDR {this.state.totalPrice}</div>
                                 </div>
                             </div>:
                             <div className="empty-summary">
-                                <div class="summary-title">The cart is empty</div>
-                                <p class="summary-sub-title">No products have been added to cart yet.</p>
-                                <Link to="/product" class="summary-sub-title">Click here to add product.</Link>
+                                <div className="summary-title">The cart is empty</div>
+                                <p className="summary-sub-title">No products have been added to cart yet.</p>
+                                <Link to="/product" className="summary-sub-title">Click here to add product.</Link>
                             </div>
                         }
                         {this.state.isProductAdded ?
-                            <div class="transaction-details">
-                                <div class="details-address">
-                                    <div class="details-address-label">
-                                        <p class="details-address-label-title">Address details</p>
-                                        <p class="details-address-edit" onClick={()=>{
+                            <div className="transaction-details">
+                                <div className="details-address">
+                                    <div className="details-address-label">
+                                        <p className="details-address-label-title">Address details</p>
+                                        <p className="details-address-edit" onClick={()=>{
                                             this.setState({
                                                 editInfo: !this.state.editInfo,
                                             })
                                         }}>{this.state.editInfo === false ? <p>edit</p>:<p>save</p>}</p>
                                     </div>
                                     {this.state.editInfo === false ?
-                                        <div class="details-box">
-                                            <label class="input-box-info"> Delivery to </label>
+                                        <div className="details-box">
+                                            <label className="input-box-info"> Delivery to </label>
                                             <label className='input-box-info input-box-mid'>{this.state.address}</label>
-                                            <label class="input-box-info">{this.state.phone}</label>
+                                            <label className="input-box-info">{this.state.phone}</label>
                                         </div>:
-                                        <div class="details-box">
-                                            <label class="input-box-info"> Delivery to </label>
-                                            <input type="text-area" placeholder="Adress" class="input-box-edit" value={this.state.address}
+                                        <div className="details-box">
+                                            <label className="input-box-info"> Delivery to </label>
+                                            <input type="text-area" placeholder="Adress" className="input-box-edit" value={this.state.address}
                                             onChange={(e)=>{
                                                 this.setState({
                                                     address: e.target.value
                                                 })
                                             }}/>
-                                            <input type="tel" placeholder="Enter Phone Number" class="input-box-edit" value={this.state.phone}
+                                            <input type="tel" placeholder="Enter Phone Number" className="input-box-edit" value={this.state.phone}
                                             onChange={(e)=>{
                                                 this.setState({
                                                     phone: e.target.value
@@ -159,26 +159,26 @@ export class Payment extends Component {
                                         </div>
                                     }
                                 </div>
-                                <div class="details-payment">
-                                    <p class="details-payment-title">Payment method</p>
-                                    <form class="details-box"  action="/action_page.php"
+                                <div className="details-payment">
+                                    <p className="details-payment-title">Payment method</p>
+                                    <form className="details-box"  action="/action_page.php"
                                     onChange={(e) => {
                                         this.setState({
                                             paymentMethod: e.target.value
                                         })
                                     }}>
-                                        <label for="card" class="payment-method">
-                                            <input type="radio" name="payment" id="card" value="1"/><img src={require("../../assets/vektor/partner-logo-1.png")} alt="partner logo" class="partner-logo"/>Card
+                                        <label for="card" className="payment-method">
+                                            <input type="radio" name="payment" id="card" value="1"/><img src={require("../../assets/vektor/partner-logo-1.png")} alt="partner logo" className="partner-logo"/>Card
                                         </label>
-                                        <label for="bank" class="payment-method payment-method-mid">
-                                            <input type="radio" name="payment" id="bank" value="2"/><img src={require("../../assets/vektor/partner-logo-2.png")} alt="partner logo" class="partner-logo"/>Bank account
+                                        <label for="bank" className="payment-method payment-method-mid">
+                                            <input type="radio" name="payment" id="bank" value="2"/><img src={require("../../assets/vektor/partner-logo-2.png")} alt="partner logo" className="partner-logo"/>Bank account
                                         </label>
-                                        <label for="cash" class="payment-method">
-                                            <input type="radio" name="payment" id="cash" value="3"/><img src={require("../../assets/vektor/partner-logo-3.png")} alt="partner logo" class="partner-logo"/>Cash on delivery
+                                        <label for="cash" className="payment-method">
+                                            <input type="radio" name="payment" id="cash" value="3"/><img src={require("../../assets/vektor/partner-logo-3.png")} alt="partner logo" className="partner-logo"/>Cash on delivery
                                         </label>
                                     </form>
                                 </div>
-                                <div class="details-button" onClick={()=>{
+                                <div className="details-button" onClick={()=>{
                                     if(this.state.paymentMethod){
                                         return this.setState({
                                             showModal: true

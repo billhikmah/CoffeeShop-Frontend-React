@@ -27,16 +27,16 @@ export class CardHistory extends Component {
     render(){
         const {total_price, delivery} = this.props;
         return (
-            <div class="history-box">
+            <div className="history-box">
                 <div>
-                    <img src={`https://starbills.herokuapp.com${this.state.picture}`} alt="food-pic" class="history-pic"/>
+                    <img src={`https://starbills.herokuapp.com${this.state.picture}`} alt="food-pic" className="history-pic"/>
                 </div>
-                <div class="history-details">
-                    <div class="history-product-name">{this.state.name}</div>
-                    <div class="history-product-details">
-                        <div class="history-product-atribute">
-                            <div class="history-product-price">{total_price}</div>
-                            <div class="history-status">
+                <div className="history-details">
+                    <div className="history-product-name">{this.state.name}</div>
+                    <div className="history-product-details">
+                        <div className="history-product-atribute">
+                            <div className="history-product-price">{total_price}</div>
+                            <div className="history-status">
                                 {delivery === 1 ? <p>Finished</p> : <></>}
                                 {delivery === 2 ? <p>Delivered</p> : <></>}
                                 {delivery === 3 ? <p>Picked Up</p> : <></>}
