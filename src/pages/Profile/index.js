@@ -18,9 +18,10 @@ export class Profile extends Component {
         showModal: false,
         showSuccesModal: false,
         isPasswordMatch: true,
+        fileInput: "",
+        selectedFile: "",
         errorMessage: "",
         email: "",
-        emailShow: "",
         address: "",
         created_at: "",
         date_of_birth: "",
@@ -102,6 +103,25 @@ export class Profile extends Component {
             isMatched: true,
         })
     }
+    handleFileInputChange = (e) => {
+        const file = e.target.files[0];
+        this.setState({
+            selectedFile:e.target.file
+        })
+        this.previewFile(file);
+    }
+    previewFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () =>{
+            this.setState({
+                previewSource: reader.result
+            })
+        }
+    }
+    uploadImage = (base64EncodedImage) => {
+        console.log(base64EncodedImage)
+    }
     componentDidMount(){
         if(localStorage.getItem("token")){
             this.setState({
@@ -114,7 +134,7 @@ export class Profile extends Component {
     }
 
     render() {
-        const {navigate} = this.props
+        const {navigate} = this.props;
         return (
             <div >
                 <Header isLogin={this.state.isLogin}/>
@@ -122,45 +142,69 @@ export class Profile extends Component {
                     <div className="profile-page-title">User Profile</div>
                     <div className="profile-profile-container">
                         <div className="profile-side-tab">
-                            <div className="profile-image-container"><img className="profile-image-2" src={`https://starbills.herokuapp.com${this.state.picture}`} alt="profile"/></div>
-                            <div className="profile-name">{this.state.display_name_show}</div>
-                            <div className="profile-email">{this.state.emailShow}</div>
-                            <div className={this.state.isEdit === true ? "profile-choose-photo" : "hide"}>Choose photo</div>
-                            <div className={this.state.isEdit === true ? "profile-remove-photo" : "hide"}>remove</div>
+                            <div className="profile-image-container"><img className="profile-image-2" src={this.state.previewSource ?
+                            this.state.previewSource:
+                            `https://starbills.herokuapp.com${this.state.picture}`} alt="profile"/></div>
+                            <div className="profile-name">{this.state.display_name}</div>
+                            <div className="profile-email">{this.state.email}</div>
+                            <label className={this.state.isEdit === true ? "" : "hide"} for="upload-image">
+                                <input className="profile-choose-photo"
+                                type="file" name="image" id="upload-image"
+                                onChange={(e)=>{
+                                    let body = new FormData();
+                                    body.append('picture', e.target.files[0]);
+                                    body.append("password", this.state.password)
+                                    this.setState({
+                                        body: body
+                                    })
+                                }}
+                                value={this.state.fileInput}/>
+                            </label>
+
+                            <div className={this.state.isEdit === true ? "profile-remove-photo" : "hide"}>
+                                remove
+                            </div>
+
                             <div className={this.state.isEdit === true ? "profile-edit" : "hide"}
                             onClick={() => {
                                 this.setState({
                                     showEditPassword: true
                                 })
                             }}>Edit Password</div>
+
                             <div className={this.state.isEdit === true ? "profile-question-box" : "hide"}>Do you want to save the change?</div>
                             <div className={this.state.isEdit === true ? "profile-save" : "hide"}
-                            onClick={()=>{
-                                const body = {
-                                    address: this.state.address,
-                                    date_of_birth: this.state.date_of_birth,
-                                    display_name: this.state.display_name,
-                                    email: this.state.email,
-                                    first_name: this.state.first_name,
-                                    last_name: this.state.last_name,
-                                    password: this.state.password,
-                                    phone: this.state.phone,
-                                    picture: this.state.picture,
-                                    sex_id: this.state.sex_id,
-                                }
-                                this.updateProfile(body)
+                            onClick={(e)=>{
+                                e.preventDefault();
+                                const image = this.state.previewSource;
+
+                                // const body = {
+                                //     address: this.state.address_show,
+                                //     date_of_birth: this.state.date_of_birth_show,
+                                //     display_name: this.state.display_name_show,
+                                //     email: this.state.email_show,
+                                //     first_name: this.state.first_name_show,
+                                //     last_name: this.state.last_name_show,
+                                //     password: this.state.password,
+                                //     phone: this.state.phone_show,
+                                //     picture: image,
+                                //     sex_id: this.state.sex_id_show,
+                                // }
+                                this.updateProfile(this.state.body)
                                 this.setState({
                                     showSuccesModal: true,
-                                    address_show: this.state.address,
-                                    date_of_birth_show: this.state.date_of_birth,
-                                    display_name_show: this.state.display_name,
-                                    email_show: this.state.email,
-                                    first_name_show: this.state.first_name,
-                                    last_name_show: this.state.last_name,
-                                    phone_show: this.state.phone,
-                                    sex_id_show: this.state.sex_id
+                                    address: this.state.address_show,
+                                    date_of_birth: this.state.date_of_birth_show,
+                                    display_name: this.state.display_name_show,
+                                    email: this.state.email_show,
+                                    first_name: this.state.first_name_show,
+                                    last_name: this.state.last_name_show,
+                                    phone: this.state.phone_show,
+                                    sex_id: this.state.sex_id_show
                                 })
                             }}>Save Change</div>
+
+
                             <div className={this.state.isEdit === true ? "profile-cancel" : "hide"} onClick={()=>{
                                 this.setState({
                                     isEdit: false,
@@ -197,25 +241,25 @@ export class Profile extends Component {
                                         <div className="profile-form-contacts">
                                             <div className="profile-left-column">
                                                 <label className="profile-label" htmlFor="email">Email Address :</label>
-                                                <input className="profile-left-input" type="email" name="email" value={this.state.email}  onChange={(event) => {
+                                                <input className="profile-left-input" type="email" name="email" value={this.state.email_show}  onChange={(event) => {
                                                     const newEmail = event.target.value
                                                     this.setState({
-                                                        email: newEmail
+                                                        email_show: newEmail
                                                         
                                                     });
                                                 }}/>
                                                 <label className="profile-label" htmlFor="address">Delivery Address :</label>
-                                                <textarea className="profile-left-input" name="address" rows="1" cols="70" value={this.state.address} onChange={(event) => {
+                                                <textarea className="profile-left-input" name="address" rows="1" cols="70" value={this.state.address_show} onChange={(event) => {
                                                     this.setState({
-                                                        address: event.target.value,
+                                                        address_show: event.target.value,
                                                     });
                                                 }}/>
                                             </div>
                                             <div className="profile-right-column">
                                                 <label className="profile-label" htmlFor="phone">Mobile Number :</label>
-                                                <input className="profile-right-input" type="tel" name="phone" value={this.state.phone}  onChange={(event) => {
+                                                <input className="profile-right-input" type="tel" name="phone" value={this.state.phone_show}  onChange={(event) => {
                                                     this.setState({
-                                                        phone: event.target.value,
+                                                        phone_show: event.target.value,
                                                     });
                                                 }}/>
                                             </div>
@@ -242,26 +286,26 @@ export class Profile extends Component {
                                         <div className="profile-form-details">
                                             <div className="profile-left-column">
                                                 <label className="profile-label" htmlFor="display_name">Display name :</label>
-                                                <input className="profile-left-input" type="text" name="display_name" value={this.state.display_name} onChange={(event) => {
+                                                <input className="profile-left-input" type="text" name="display_name" value={this.state.display_name_show} onChange={(event) => {
                                                     this.setState({
-                                                        display_name: event.target.value,
+                                                        display_name_show: event.target.value,
                                                         });}}/>
                                                 <label className="profile-label" htmlFor="first_name">First name :</label>
-                                                <input className="profile-left-input" type="text" name="first_name" value={this.state.first_name} onChange={(event) => {
+                                                <input className="profile-left-input" type="text" name="first_name" value={this.state.first_name_show} onChange={(event) => {
                                                     this.setState({
-                                                        first_name: event.target.value,
+                                                        first_name_show: event.target.value,
                                                         });}}/>
                                                 <label className="profile-label" htmlFor="last_name">Last name :</label>
-                                                <input className="profile-left-input" type="text" name="last_name" value={this.state.last_name} onChange={(event) => {
+                                                <input className="profile-left-input" type="text" name="last_name" value={this.state.last_name_show} onChange={(event) => {
                                                     this.setState({
-                                                        last_name: event.target.value,
+                                                        last_name_show: event.target.value,
                                                         });}}/>
                                             </div>
                                             <div className="profile-right-column">
                                                 <label className="profile-label" htmlFor="birthday">DD//MM//YY</label>
-                                                <input className="profile-right-input" type="date" name="birthday" value={this.state.date_of_birth} onChange={(event) => {
+                                                <input className="profile-right-input" type="date" name="birthday" value={this.state.date_of_birth_show} onChange={(event) => {
                                                     this.setState({
-                                                        date_of_birth: event.target.value,
+                                                        date_of_birth_show: event.target.value,
                                                         });}}/></div>
 
                                         </div>:
