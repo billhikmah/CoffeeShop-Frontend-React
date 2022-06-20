@@ -54,7 +54,8 @@ export class Product extends Component {
     componentDidMount(){
         if(localStorage.getItem("token")){
             this.setState({
-                isLogin: true
+                isLogin: true,
+                role: localStorage.getItem("role")
             })
         }
         window.scrollTo(0, 0)
@@ -64,7 +65,6 @@ export class Product extends Component {
         const page = this.props.searchParams.get("page") || 1
         const checkSort = this.props.searchParams.get("sort")
         if(checkSort && checkSort !== "4"){
-            
             if(category === ""){
                 this.setState({
                     menuClicked: "0"
@@ -222,7 +222,7 @@ export class Product extends Component {
                             <div className="box-1-4">FNPR15RG</div>
                             <div className="box-1-5">Valid untill October 10th 2020</div></div>
                     </div>
-                    <div className="apply-coupon"> Apply Coupon</div>
+                    <div className="apply-coupon">Apply Coupon</div>
                     <div className="terms">
                         <div>Terms and Condition</div>
                         <div className="terms-content">
@@ -230,6 +230,7 @@ export class Product extends Component {
                         2. It only for dine in<br/>
                         3. Buy 1 get 1 only for new user<br/>
                         4. Should make member card to apply coupon</div>
+                    <div className="add-new-promo">Add new promo</div>
                     </div>
                 </section>
 
@@ -255,6 +256,7 @@ export class Product extends Component {
                                         picture={item.picture}
                                         title={item.name}
                                         price={`IDR ${item.price}`}
+                                        role={this.state.role}
                                     />
                                     );
                                 }) : <></>
@@ -267,6 +269,7 @@ export class Product extends Component {
                                         picture={item.picture}
                                         title={item.name}
                                         price={`IDR ${item.price}`}
+                                        role={this.state.role}
                                     />
                                     );
                                 }) : <></>
@@ -369,6 +372,12 @@ export class Product extends Component {
                             </div>
                         </div>:
                         <></>
+                    }
+                    {this.state.isLogin === true && this.state.role === "admin" ?
+                    <div className='product-add-new' onClick={() => {
+                        navigate("/product/new")
+                    }}>Add new product</div>:
+                    <></>
                     }
                 </section>
             </main>
