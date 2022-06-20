@@ -184,16 +184,16 @@ export class Product_details extends Component {
                                         <div className="count-button" onClick={() => {
                                             let newTotal = this.state.totalItems;
                                             if(this.state.totalItems !== 10){
-                                                newTotal = this.state.totalItems + 1;
+                                                newTotal = this.state.totalItems - 1;
                                             }
                                             this.setState({
                                                 totalItems: newTotal,
                                             })
-                                        }}>+</div>{this.state.totalItems}
+                                        }}>-</div>{this.state.totalItems}
                                         <div className="count-button" onClick={() => {
                                             let newTotal = this.state.totalItems;
                                             if(this.state.totalItems !== 1){
-                                                newTotal = this.state.totalItems - 1;
+                                                newTotal = this.state.totalItems + 1;
                                                 return this.setState({
                                                     totalItems: newTotal,
                                                 })
@@ -202,7 +202,7 @@ export class Product_details extends Component {
                                                 totalItems: 0,
                                                 sizeChosen: ""
                                             })
-                                        }}>-</div>
+                                        }}>+</div>
                                     </div>
                                 </div>
                                 
