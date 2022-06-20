@@ -188,7 +188,8 @@ export class Profile extends Component {
                                     phone: this.state.phone_show,
                                     sex_id: this.state.sex_id_show,
                                 }
-                                const body = {...this.state.body, ...data}
+                                let body = new FormData();
+                                body = {...this.state.body, ...data}
                                 this.updateProfile(body)
                                 this.setState({
                                     showSuccesModal: true,
