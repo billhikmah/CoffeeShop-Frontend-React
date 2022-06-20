@@ -22,7 +22,7 @@ function CardProduct(props) {
       <div onClick={() =>{
         props.navigate("/product/new")
       }}>
-        <img src={require("../../assets/vektor/edit-product.png")} className="edit-product-logo"/>
+        <img src={require("../../assets/vektor/edit-product.png")} className="edit-product-logo" alt="edit-product-logo"/>
       </div>:
       <></>}
     </div>

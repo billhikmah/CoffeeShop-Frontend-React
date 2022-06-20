@@ -4,7 +4,6 @@ import { Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { connect } from "react-redux";
-import { addToCart } from "../../redux/actionCreator/addToCart";
 
 import withParams from "../../helpers/withParams";
 import withNavigate from "../../helpers/withNavigate";
@@ -13,7 +12,6 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import addProduct from "../../components/Services/addProduct";
 
-import {getDetails} from "../../components/Services/getProduct";
 
 export class Product_details extends Component {
     state = {
@@ -68,7 +66,7 @@ export class Product_details extends Component {
         window.scrollTo(0, 0)
     }
   render() {
-    const {navigate, dispatch} = this.props
+    const {navigate} = this.props
     return (
         <div >
             <Header isLogin={this.state.isLogin}/>
@@ -81,7 +79,7 @@ export class Product_details extends Component {
                 <section className='add-left-section'>
                     <img className='add-camera-logo' src={this.state.previewSource ?
                             this.state.previewSource:
-                            require("../../assets/vektor/camera-logo.png")}/>
+                            require("../../assets/vektor/camera-logo.png")} alt="product-preview"/>
                     <label className='add-choose-pict'><input type="file" name="image" id="upload-image" className='add-choose-pict-input'
                         onChange={(e)=>{
                             this.handleFileInputChange(e);
