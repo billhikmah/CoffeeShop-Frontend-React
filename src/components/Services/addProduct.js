@@ -7,6 +7,7 @@ export default async function addProduct(body) {
     const result = await axios.post(URL, body, {
       headers: {
           "x-access-token": `${token}`,
+          "content-type": "multipart/form-data"
       },
     });
     return result;

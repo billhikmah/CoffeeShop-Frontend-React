@@ -187,7 +187,7 @@ export class Profile extends Component {
                                 }
                                 let body = new FormData();
                                 body = {...body, ...data};
-                                
+                                console.log(body)
                                 this.updateProfile(body)
                                 this.setState({
                                     showSuccesModal: true,
