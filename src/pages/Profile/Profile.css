@@ -113,6 +113,9 @@
     cursor: pointer;
     background: rgb(180, 127, 22);
 }
+.profile-choose-photo-input{
+    display: none;
+}
 .profile-remove-photo{
     width: 207px;
     height: 44px;
