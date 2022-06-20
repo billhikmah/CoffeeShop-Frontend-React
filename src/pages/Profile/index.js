@@ -152,7 +152,7 @@ export class Profile extends Component {
                                 type="file" name="image" id="upload-image"
                                 onChange={(e)=>{
                                     this.handleFileInputChange(e);
-                                    const body = 
+                                    // const body = 
                                     // let body = new FormData();
                                     // body.append('picture', e.target.files[0]);
                                     this.setState({
