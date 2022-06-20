@@ -176,9 +176,8 @@ export class Profile extends Component {
                             <div className={this.state.isEdit === true ? "profile-save" : "hide"}
                             onClick={(e)=>{
                                 e.preventDefault();
-                                // const image = this.state.previewSource;
 
-                                const body = {
+                                const data = {
                                     address: this.state.address_show,
                                     date_of_birth: this.state.date_of_birth_show,
                                     display_name: this.state.display_name_show,
@@ -189,10 +188,8 @@ export class Profile extends Component {
                                     phone: this.state.phone_show,
                                     sex_id: this.state.sex_id_show,
                                 }
-                                this.setState({
-                                    body: {...this.state.body, ...body}
-                                })
-                                this.updateProfile(this.state.body)
+                                const body = {...this.state.body, ...data}
+                                this.updateProfile(body)
                                 this.setState({
                                     showSuccesModal: true,
                                     address: this.state.address_show,
