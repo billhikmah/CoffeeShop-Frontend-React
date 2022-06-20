@@ -190,7 +190,7 @@ export class Profile extends Component {
                                     sex_id: this.state.sex_id_show,
                                 }
                                 this.setState({
-                                    body: {...this.state.body, body}
+                                    body: {...this.state.body, ...body}
                                 })
                                 this.updateProfile(this.state.body)
                                 this.setState({
