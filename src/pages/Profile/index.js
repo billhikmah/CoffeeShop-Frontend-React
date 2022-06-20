@@ -151,9 +151,9 @@ export class Profile extends Component {
                                 <input className="profile-choose-photo"
                                 type="file" name="image" id="upload-image"
                                 onChange={(e)=>{
+                                    this.handleFileInputChange(e);
                                     let body = new FormData();
                                     body.append('picture', e.target.files[0]);
-                                    body.append("password", this.state.password)
                                     this.setState({
                                         body: body
                                     })
@@ -178,18 +178,20 @@ export class Profile extends Component {
                                 e.preventDefault();
                                 // const image = this.state.previewSource;
 
-                                // const body = {
-                                //     address: this.state.address_show,
-                                //     date_of_birth: this.state.date_of_birth_show,
-                                //     display_name: this.state.display_name_show,
-                                //     email: this.state.email_show,
-                                //     first_name: this.state.first_name_show,
-                                //     last_name: this.state.last_name_show,
-                                //     password: this.state.password,
-                                //     phone: this.state.phone_show,
-                                //     picture: image,
-                                //     sex_id: this.state.sex_id_show,
-                                // }
+                                const body = {
+                                    address: this.state.address_show,
+                                    date_of_birth: this.state.date_of_birth_show,
+                                    display_name: this.state.display_name_show,
+                                    email: this.state.email_show,
+                                    first_name: this.state.first_name_show,
+                                    last_name: this.state.last_name_show,
+                                    password: this.state.password,
+                                    phone: this.state.phone_show,
+                                    sex_id: this.state.sex_id_show,
+                                }
+                                this.setState({
+                                    body: {...this.state.body, body}
+                                })
                                 this.updateProfile(this.state.body)
                                 this.setState({
                                     showSuccesModal: true,
