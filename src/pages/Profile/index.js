@@ -190,7 +190,9 @@ export class Profile extends Component {
                                     sex_id: this.state.sex_id_show,
                                     picture: this.state.picture
                                 }
-                                let body = new FormData(data);
+                                let body = new FormData();
+                                body.append('picture', this.state.picture);
+                                
                                 this.updateProfile(body)
                                 this.setState({
                                     showSuccesModal: true,
