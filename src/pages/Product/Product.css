@@ -233,11 +233,38 @@
     line-height: 14px;
     color: #4F5665;
 }
+.add-new-promo{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #6A4029;
+    background: #FFCB65;
+    border-radius: 20px;
+    width: 284px;
+    height: 64px;
+    padding-top: 20px;
+    margin-top: 160px;
+}
+.add-new-promo:hover{
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #6A4029;
+}
+.add-new-promo:active{
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #6A4029;
+}
 
 .product-main-content{
     position: relative;
     display: grid;
-    grid-template-rows: 940px 80px;
+    grid-template-rows: 940px 80px 140px;
+    justify-content: center;
 }
 .menu-container{
     display: grid;
@@ -425,4 +452,33 @@
 }
 .page-box:active{
     background-color: #4F5665;
+}
+.product-add-new{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 660px;
+    margin: 40px 110px;
+    background: rgba(106, 64, 41, 1);
+    border-radius: 20px;
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+.product-add-new:hover{
+    cursor: pointer;
+    color: #6A4029;
+    background: #FFCB65;
+}
+.product-add-new:active{
+    cursor: pointer;
+    color: #6A4029;
+    background: #c5983f;
 }
