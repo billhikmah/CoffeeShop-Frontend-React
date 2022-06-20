@@ -285,6 +285,7 @@ export class Product_details extends Component {
                                 showUnsuccessModal: true
                             })
                         }
+                        console.log(body);
                         this.addNewProduct(body)
                         this.setState({
                             showSuccesModal: true
