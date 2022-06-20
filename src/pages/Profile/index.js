@@ -31,7 +31,7 @@ export class Profile extends Component {
         last_name: "",
         phone: "",
         picture: "",
-        sex_id: null
+        sex_id: ""
     }
     getProfile = () => {
         getUser()
