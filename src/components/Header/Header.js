@@ -83,7 +83,7 @@ export class Header extends Component  {
 
         </div>
         <img className="header-login-navigation-3-content" src={require("../../assets/chat.png")} alt="Chat"/>
-        <Link to="/profile"><img className="header-login-navigation-3-content header-login-image-1" src={`https://starbills.herokuapp.com${this.state.profilePicture}`} alt="Profile"/></Link>
+        <Link to="/profile"><img className="header-login-navigation-3-content header-login-image-1" src={this.state.profilePicture} alt="Profile"/></Link>
       </div> : 
       <div className="navigation-3">
           <Link to="/login" className="login-button navigation-3-content">Login</Link>
