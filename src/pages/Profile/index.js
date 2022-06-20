@@ -119,9 +119,6 @@ export class Profile extends Component {
             })
         }
     }
-    uploadImage = (base64EncodedImage) => {
-        console.log(base64EncodedImage)
-    }
     componentDidMount(){
         if(localStorage.getItem("token")){
             this.setState({
@@ -147,19 +144,17 @@ export class Profile extends Component {
                             this.state.picture} alt="profile"/></div>
                             <div className="profile-name">{this.state.display_name}</div>
                             <div className="profile-email">{this.state.email}</div>
-                            <label className={this.state.isEdit === true ? "" : "hide"} for="upload-image">
-                                <input className="profile-choose-photo"
+                            <label className={this.state.isEdit === true ? "profile-choose-photo" : "hide"} for="upload-image">
+                                <input className="profile-choose-photo-input"
                                 type="file" name="image" id="upload-image"
                                 onChange={(e)=>{
                                     this.handleFileInputChange(e);
-                                    // const body = 
-                                    // let body = new FormData();
-                                    // body.append('picture', e.target.files[0]);
                                     this.setState({
                                         picture: e.target.files[0]
                                     })
                                 }}
                                 value={this.state.fileInput}/>
+                                Choose photo
                             </label>
 
                             <div className={this.state.isEdit === true ? "profile-remove-photo" : "hide"}>
