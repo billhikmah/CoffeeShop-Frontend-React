@@ -144,7 +144,7 @@ export class Profile extends Component {
                         <div className="profile-side-tab">
                             <div className="profile-image-container"><img className="profile-image-2" src={this.state.previewSource ?
                             this.state.previewSource:
-                            `https://starbills.herokuapp.com${this.state.picture}`} alt="profile"/></div>
+                            this.state.picture} alt="profile"/></div>
                             <div className="profile-name">{this.state.display_name}</div>
                             <div className="profile-email">{this.state.email}</div>
                             <label className={this.state.isEdit === true ? "" : "hide"} for="upload-image">
