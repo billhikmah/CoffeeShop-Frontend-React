@@ -23,6 +23,7 @@ export class Login extends Component {
                 errorMessage: ""
             })
             localStorage.setItem("token", res.data.data.token);
+            localStorage.setItem("role", res.data.data.role);
             this.props.navigate("/");
         })
         .catch((error) => {
