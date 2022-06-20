@@ -12,7 +12,7 @@ function CardProduct(props) {
         props.navigate(`/product/details/${id}`)
     }}>
         <div className="image-container">
-            <img className="image-2" src={`https://starbills.herokuapp.com${picture}`} alt="Veggie tomato mix"/>
+            <img className="image-2" src={picture} alt="Veggie tomato mix"/>
         </div>
         <div className="product-name">{title}</div>
         <div className="price">{price}</div>
