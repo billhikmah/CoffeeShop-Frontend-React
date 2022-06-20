@@ -191,7 +191,6 @@ export class Profile extends Component {
                                     picture: this.state.picture
                                 }
                                 let body = new FormData();
-                                // body.append('picture', this.state.picture);
                                 body = {...body, ...data};
                                 
                                 this.updateProfile(body)
