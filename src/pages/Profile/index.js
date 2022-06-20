@@ -152,10 +152,11 @@ export class Profile extends Component {
                                 type="file" name="image" id="upload-image"
                                 onChange={(e)=>{
                                     this.handleFileInputChange(e);
-                                    let body = new FormData();
-                                    body.append('picture', e.target.files[0]);
+                                    const body = 
+                                    // let body = new FormData();
+                                    // body.append('picture', e.target.files[0]);
                                     this.setState({
-                                        body: body
+                                        picture: e.target.files[0]
                                     })
                                 }}
                                 value={this.state.fileInput}/>
@@ -187,9 +188,9 @@ export class Profile extends Component {
                                     password: this.state.password,
                                     phone: this.state.phone_show,
                                     sex_id: this.state.sex_id_show,
+                                    picture: this.state.picture
                                 }
-                                let body = new FormData();
-                                body = {...this.state.body, ...data}
+                                let body = new FormData(data);
                                 this.updateProfile(body)
                                 this.setState({
                                     showSuccesModal: true,
