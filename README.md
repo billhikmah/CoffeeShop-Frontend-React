@@ -31,7 +31,7 @@ This client side has been created with React.js framework and deployed on [Netli
 
 <h2>Package</h2>
 
-In addition to using the React.js framework, this frontend is also supported by the following packages:
+In addition to using the React.js framework, this frontend is also supported by this following packages:
 
 1. [axios](https://www.npmjs.com/package/axios)
 2. [bootstrap](https://www.npmjs.com/package/bootstrap)
