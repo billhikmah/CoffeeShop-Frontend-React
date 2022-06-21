@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+<h1 style="text-align:center">Starbills Coffee Shop Frontend</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div style="display:flex; justify-content:center; margin-bottom:40px;">
+    <img src="src/assets/Homepage.png" width=400;>
+</div>
 
-## Available Scripts
+# Introduction
+<div style="display:flex; flex-direction:row; column-gap:20px; margin-bottom:20px">
+<img src="https://img.shields.io/badge/HTML-5-orange" alt="HTML">
+<img src="https://img.shields.io/badge/CSS-3-9cf" alt="CSS">
+<img src="https://img.shields.io/badge/React-JS-blue" alt="React JS">
+<img src="https://img.shields.io/badge/Bootstrap-5-purple" alt="Bootstrap">
+</div>
 
-In the project directory, you can run:
+<h2>How to Install</h2>
 
-### `npm start`
+Clone the repository below and open the file using [VSCode](https://code.visualstudio.com/download)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ```
+    https://github.com/billhikmah/CoffeeShop-Frontend-React
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Deploy</h2>
 
-### `npm test`
+This client side has been created with React.js framework and deployed on [Netlify](https://starbills.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+    ```
+    https://starbills.netlify.app/
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2>Package</h2>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In addition to using the React.js framework, this frontend is also supported by the following packages:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. [axios](https://www.npmjs.com/package/axios)
+2. [bootstrap](https://www.npmjs.com/package/bootstrap)
+3. [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
+4. [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+5. [redux](https://www.npmjs.com/package/redux)
+6. [morgan](https://www.npmjs.com/package/morgan)
+7. [eslint](https://www.npmjs.com/package/eslint)
+8. [dotenv](https://www.npmjs.com/package/dotenv)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2>Preview</h2>
+<img src="src/assets/Payment.png" alt="homepage" width=420 style="display:flex; justify-content:center; margin-bottom:20px;">
+<div style="display:flex; justify-content: left; column-gap:20px; margin-bottom:20px">
+<img src="src/assets/frontend-login.png" alt="login" width=200>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="src/assets/frontend-signup.png" alt="signup" width=200>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<div style="display:flex; justify-content: left; column-gap:20px; margin-bottom:20px">
+<img src="src/assets/frontend-profile.png" alt="profile" width=200>
 
-## Learn More
+<img src="src/assets/frontend-product.png" alt="product" width=200>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>Related Documentation</h2>
 
-### Code Splitting
+1. Server (Backend)<br>
+    Server documentation can be accessed via [Postman](https://documenter.getpostman.com/view/20723287/UyrEguSx) or [Github Repository](https://github.com/billhikmah/Coffee-Shop-Project). The backend also has been deployed to [Heroku](https://www.heroku.com) and the assets have been uploaded to [Cloudinary](https://www.cloudinary.app/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. HTML & CSS (Frontend)<br>
+    The client side has been documented with HTML & CSS and deployed on [Netlify](ttps://www.cloudinary.com).
