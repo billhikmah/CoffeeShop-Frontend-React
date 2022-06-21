@@ -52,6 +52,7 @@ export class History extends Component {
                             product_id={item.product_id}
                             total_price={`IDR ${item.total_price}`}
                             delivery={item.delivery_method_id}
+                            id={item.id}
                         />
                         );
                     })}

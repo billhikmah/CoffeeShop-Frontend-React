@@ -44,6 +44,9 @@ export class CardHistory extends Component {
                         </div>
                     </div>
                 </div>
+                <div className='history-checkbox'>
+                    <input type="checkbox"/>
+                </div>
             </div>
         )
     }
