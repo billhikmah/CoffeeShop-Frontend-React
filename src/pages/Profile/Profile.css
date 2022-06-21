@@ -409,6 +409,10 @@
     padding-top: 8px
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
 @media only screen and (max-width: 600px){
     .col-l-1 {width: 8.33%;}
     .col-l-2 {width: 16.66%;}
