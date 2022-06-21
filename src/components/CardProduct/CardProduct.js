@@ -20,7 +20,7 @@ function CardProduct(props) {
       </div>
       {role === "admin" ?
       <div onClick={() =>{
-        props.navigate("/product/new")
+        props.navigate(`/product/update/${id}`)
       }}>
         <img src={require("../../assets/vektor/edit-product.png")} className="edit-product-logo" alt="edit-product-logo"/>
       </div>:
