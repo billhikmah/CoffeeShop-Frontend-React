@@ -318,7 +318,7 @@ export class Profile extends Component {
                                                     this.setState({
                                                         date_of_birth_show: event.target.value,
                                                         });
-                                                        {this.dateShow(event.target.value)}
+                                                        this.dateShow(event.target.value)
                                                     }}
                                                 />
                                             </div>
