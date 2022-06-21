@@ -1,7 +1,7 @@
 <h1 style="text-align:center">Starbills Coffee Shop Frontend</h1>
 
 <div style="display:flex; justify-content:center; margin-bottom:40px;">
-    <img src="src/assets/Homepage.png" width=400;>
+    <img src="src/assets/readme/Homepage.png" width=400; height=200>
 </div>
 
 # Introduction
@@ -44,18 +44,24 @@ In addition to using the React.js framework, this frontend is also supported by 
 
 
 <h2>Preview</h2>
-<img src="src/assets/Payment.png" alt="homepage" width=420 style="display:flex; justify-content:center; margin-bottom:20px;">
 <div style="display:flex; justify-content: left; column-gap:20px; margin-bottom:20px">
-<img src="src/assets/frontend-login.png" alt="login" width=200>
+<img src="src/assets/readme/payment.png" alt="login" height=200>
 
-<img src="src/assets/frontend-signup.png" alt="signup" width=200>
+<img src="src/assets/readme/edit.png" alt="signup" height=200>
 
 </div>
 
 <div style="display:flex; justify-content: left; column-gap:20px; margin-bottom:20px">
-<img src="src/assets/frontend-profile.png" alt="profile" width=200>
+<img src="src/assets/readme/profile.png" alt="login" height=200>
 
-<img src="src/assets/frontend-product.png" alt="product" width=200>
+<img src="src/assets/readme/product.png" alt="signup" height=200>
+
+</div>
+
+<div style="display:flex; justify-content: left; column-gap:20px; margin-bottom:20px">
+<img src="src/assets/readme/details.png" alt="profile" height=200>
+
+<img src="src/assets/readme/history.png" alt="product" height=200>
 
 </div>
 
