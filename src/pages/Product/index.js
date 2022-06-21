@@ -230,7 +230,9 @@ export class Product extends Component {
                         2. It only for dine in<br/>
                         3. Buy 1 get 1 only for new user<br/>
                         4. Should make member card to apply coupon</div>
-                    <div className="add-new-promo">Add new promo</div>
+                    <div className="add-new-promo" onClick={() => {
+                        navigate("/promo/new")
+                    }}>Add new promo</div>
                     </div>
                 </section>
 
