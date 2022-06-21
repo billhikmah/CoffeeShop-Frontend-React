@@ -23,8 +23,8 @@ export class AddPromo extends Component {
         price: "",
         delivery_method_id: "",
         description: "",
-        start_hour: "",
-        end_hour: "",
+        start_date: "",
+        end_date: "",
         stock: "",
         picture: "",
         coupon_code: "",
@@ -105,12 +105,12 @@ export class AddPromo extends Component {
                     <div className='add-labels'>Expire date :</div>
                     <div>
                         <form action="/action_page.php" >
-                            <input type="text" id="start-hour" name="start-hour" className='add-box-input' value={this.state.start_hour} placeholder="Select start date"
+                            <input type="text" id="start-hour" name="start-hour" className='add-box-input' value={this.state.start_date} placeholder="Select start date"
                                 onFocus={(e) => (e.target.type = "datetime-local")}
                                 onBlur={(e) => (e.target.type = "text")}
                                 onChange={(e) => {
                                     this.setState({
-                                        start_hour: e.target.value
+                                        start_date: e.target.value
                                     })
                                 }}
                             />
@@ -119,12 +119,12 @@ export class AddPromo extends Component {
                     </div>
                     <div>
                         <form action="/action_page.php">
-                            <input type="text" id="end-hour" name="end-hour" className='add-box-input' value={this.state.end_hour}placeholder="Select end date"
+                            <input type="text" id="end-hour" name="end-hour" className='add-box-input' value={this.state.end_date}placeholder="Select end date"
                                 onFocus={(e) => (e.target.type = "datetime-local")}
                                 onBlur={(e) => (e.target.type = "text")}
                                 onChange={(e) => {
                                     this.setState({
-                                        end_hour: e.target.value
+                                        end_date: e.target.value
                                     })
                                 }}
                             />
@@ -249,16 +249,16 @@ export class AddPromo extends Component {
                             size_id: this.state.size_id,
                             price: this.state.price,
                             coupon_code: this.state.coupon_code,
-                            dics: this.state.disc,
+                            disc: this.state.disc,
                             delivery_method_id: this.state.delivery_method_id,
                             description: this.state.description,
-                            start_hour: this.state.start_hour,
-                            end_hour: this.state.end_hour,
+                            start_date: this.state.start_date,
+                            end_date: this.state.end_date,
                             picture: this.state.picture,
                         }
                         let body = new FormData();
                         body = {...body, ...data};
-                        if(this.state.name === "" || this.state.size_id === "" || this.state.price === "" || this.state.category_id === "" || this.state.delivery_method_id === "" || this.state.description ==="" || this.state.start_hour === "" || this.state.end_hour === "" || this.state.stock === "" || this.state.picture === ""){
+                        if(this.state.name === "" || this.state.size_id === "" || this.state.price === "" || this.state.coupon_code === "" || this.state.delivery_method_id === "" || this.state.description ==="" || this.state.start_date === "" || this.state.end_date === "" || this.state.disc === "" || this.state.picture === ""){
                             console.log(data)
                             return this.setState({
                                 showUnsuccessModal: true
