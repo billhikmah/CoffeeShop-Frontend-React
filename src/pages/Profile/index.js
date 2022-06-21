@@ -36,6 +36,7 @@ export class Profile extends Component {
     getProfile = () => {
         getUser()
         .then((result) => {
+            console.log(result)
             this.setState({
               address: result.data.data.address,
               address_show: result.data.data.address,
@@ -58,9 +59,18 @@ export class Profile extends Component {
               sex_id: result.data.data.sex_id,
               sex_id_show: result.data.data.sex_id
             })
+            this.dateShow(result.data.data.date_of_birth)
         })
         .catch((error) => {
             console.log(error.response) })
+    }
+    dateShow = (date) => {
+        const newDate = date.split("-");
+        const newDate2 = newDate[2].split("T");
+        const date_of_birth_visual = newDate2[0] + `//` + newDate[1] + `//` + newDate[0];
+        this.setState({
+            date_of_birth_visual: date_of_birth_visual
+        })
     }
     updateProfile= (body) => {
         updateMyProfile(body)
@@ -200,6 +210,7 @@ export class Profile extends Component {
                                     phone: this.state.phone_show,
                                     sex_id: this.state.sex_id_show
                                 })
+                                this.dateShow(this.state.date_of_birth_show)
                             }}>Save Change</div>
 
 
@@ -215,6 +226,8 @@ export class Profile extends Component {
                                     phone_show: this.state.phone,
                                     sex_id_show: this.state.sex_id
                                 })
+                                this.dateShow(this.state.date_of_birth);
+                                
                             }}>Cancel</div>
                             <div className="profile-logout"
                             onClick={() => {
@@ -300,11 +313,15 @@ export class Profile extends Component {
                                                         });}}/>
                                             </div>
                                             <div className="profile-right-column">
-                                                <label className="profile-label" htmlFor="birthday">DD//MM//YY</label>
+                                                <label className="profile-label" htmlFor="birthday">DD//MM//YYYY</label>
                                                 <input className="profile-right-input" type="date" name="birthday" value={this.state.date_of_birth_show} onChange={(event) => {
                                                     this.setState({
                                                         date_of_birth_show: event.target.value,
-                                                        });}}/></div>
+                                                        });
+                                                        {this.dateShow(event.target.value)}
+                                                    }}
+                                                />
+                                            </div>
 
                                         </div>:
                                         <div className="profile-form-details">
@@ -317,8 +334,8 @@ export class Profile extends Component {
                                                 <div className="profile-left-input" type="text" name="last_name">{this.state.last_name_show}</div>
                                             </div>
                                             <div className="profile-right-column">
-                                                <label className="profile-label" htmlFor="birthday">DD//MM//YY</label>
-                                                <div className="profile-right-input" type="date" name="birthday">{this.state.date_of_birth_show}</div>
+                                                <label className="profile-label" htmlFor="birthday">DD//MM//YYYY</label>
+                                                <div className="profile-right-input" name="birthday">{this.state.date_of_birth_visual}</div>
                                             </div>
     
                                         </div>    
