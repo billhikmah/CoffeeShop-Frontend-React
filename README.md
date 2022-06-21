@@ -65,4 +65,6 @@ In addition to using the React.js framework, this frontend is also supported by 
     Server documentation can be accessed via [Postman](https://documenter.getpostman.com/view/20723287/UyrEguSx) or [Github Repository](https://github.com/billhikmah/Coffee-Shop-Project). The backend also has been deployed to [Heroku](https://www.heroku.com) and the assets have been uploaded to [Cloudinary](https://www.cloudinary.app/).
 
 2. HTML & CSS (Frontend)<br>
-    The client side has been documented with HTML & CSS and deployed on [Netlify](ttps://thestarbills.netlify.app).
+    The client side has been documented with HTML & CSS and deployed on [Netlify](https://thestarbills.netlify.app).
+
+
