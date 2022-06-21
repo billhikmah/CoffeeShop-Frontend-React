@@ -16,7 +16,8 @@ import History from "./pages/History";
 import Payment from "./pages/Payment";
 import Productdetails from "./pages/Product-details";
 import Search from './pages/Search';
-import AddProduct from "./pages/Add-Product"
+import AddProduct from "./pages/Add-Product";
+import EditProduct from "./pages/Edit-Product";
 
 import PrivateAuthRoute from "./components/PrivateRoute/PrivateAuthRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -38,6 +39,7 @@ function Router() {
           <Route path="/product/details/:id" element={<PrivateRoute><Productdetails/></PrivateRoute>}/>
           <Route path="/search" element={<PrivateRoute><Search/></PrivateRoute>}/>
           <Route path="/product/new" element={<PrivateRoute><AddProduct/></PrivateRoute>}/>
+          <Route path="/product/update/:id" element={<PrivateRoute><EditProduct/></PrivateRoute>}/>
         </Routes>
       </BrowserRouter>
     </ReduxProvider>

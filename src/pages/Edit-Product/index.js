@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./Add-Product.css"
+import "./Edit-Product.css"
 import { Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,24 +10,15 @@ import withNavigate from "../../helpers/withNavigate";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import addProduct from "../../components/Services/addProduct";
+import updateProduct from "../../components/Services/updateProduct";
+import {getDetails} from "../../components/Services/getProduct";
 
 
-export class AddProduct extends Component {
+export class EditProduct extends Component {
     state = {
         isLogin: false,
         showSuccesModal: false,
         showUnsuccessModal: false,
-        name: "",
-        size_id: "",
-        price: "",
-        category_id: "",
-        delivery_method_id: "",
-        description: "",
-        start_hour: "",
-        end_hour: "",
-        stock: "",
-        picture: "",
     };
     handleFileInputChange = (e) => {
         const file = e.target.files[0];
@@ -45,18 +36,37 @@ export class AddProduct extends Component {
             })
         }
     }
-    addNewProduct = (body) => {
-        addProduct(body)
-        .then((res) => {
-            console.log(res)
-            this.setState({
-                id: res.data.data.id
-            })
-        })
+    editProduct = (body, id) => {
+        updateProduct(body, id)
+        .then((res) => {})
         .catch((error) =>{
             console.log(error)
         })
     }
+    getProductDetails(id){
+        getDetails(id)
+        .then((res) => {
+            this.setState({
+                category_id: res.data.data[0].category_id,
+                delivery_method_id: res.data.data[0].delivery_method_id,
+                deliveryChosen: res.data.data[0].delivery_method_id,
+                description: res.data.data[0].description,
+                end_hour: res.data.data[0].end_hour,
+                id: res.data.data[0].id,
+                input_time: res.data.data[0].input_time,
+                name: res.data.data[0].name,
+                picture: res.data.data[0].picture,
+                price: res.data.data[0].price,
+                size_id: res.data.data[0].size_id,
+                sizeChosen: res.data.data[0].size_id,
+                start_hour: res.data.data[0].start_hour,
+                stock: res.data.data[0].stock,
+            });
+        })
+        .catch((err) => {
+            console.log("Error", err);
+        });
+    };
     componentDidMount(){
         if(localStorage.getItem("token")){
             this.setState({
@@ -64,6 +74,7 @@ export class AddProduct extends Component {
             })
         }
         window.scrollTo(0, 0)
+        this.getProductDetails(this.props.params.id)
     }
   render() {
     const {navigate} = this.props
@@ -73,13 +84,13 @@ export class AddProduct extends Component {
 
             <div className="product-path add-path"><span className="product-path-main" onClick={() => {
                 navigate("/product")
-            }}>Favorite &amp; Promo</span>  &gt; <span className="color-brown">Add New Product</span>
+            }}>Favorite &amp; Promo</span>  &gt; <span className="color-brown">Update Product</span>
             </div>
             <main className='add-main'>
                 <section className='add-left-section'>
                     <img className='add-camera-logo' src={this.state.previewSource ?
                             this.state.previewSource:
-                            require("../../assets/vektor/camera-logo.png")} alt="product-preview"/>
+                            this.state.picture} alt="food"/>
                     <label className='add-choose-pict'><input type="file" name="image" id="upload-image" className='add-choose-pict-input'
                         onChange={(e)=>{
                             this.handleFileInputChange(e);
@@ -99,16 +110,16 @@ export class AddProduct extends Component {
                                     })
                                 }}>
                                 <option value="" disabled selected>Select start hour</option>
-                                <option value="10:00:00">10:00:00</option>
-                                <option value="11:00:00">11:00:00</option>
-                                <option value="12:00:00">12:00:00</option>
-                                <option value="13:00:00">13:00:00</option>
-                                <option value="14:00:00">14:00:00</option>
-                                <option value="15:00:00">15:00:00</option>
-                                <option value="16:00:00">16:00:00</option>
-                                <option value="17:00:00">17:00:00</option>
-                                <option value="18:00:00">18:00:00</option>
-                                <option value=">19:00:00">19:00:00</option>
+                                <option value="10:00:00" selected={this.state.start_hour === "10:00:00"? "selected" : ""}>10:00:00</option>
+                                <option value="11:00:00" selected={this.state.start_hour === "11:00:00"? "selected" : ""}>11:00:00</option>
+                                <option value="12:00:00" selected={this.state.start_hour === "12:00:00"? "selected" : ""}>12:00:00</option>
+                                <option value="13:00:00" selected={this.state.start_hour === "13:00:00"? "selected" : ""}>13:00:00</option>
+                                <option value="14:00:00" selected={this.state.start_hour === "14:00:00"? "selected" : ""}>14:00:00</option>
+                                <option value="15:00:00" selected={this.state.start_hour === "15:00:00"? "selected" : ""}>15:00:00</option>
+                                <option value="16:00:00" selected={this.state.start_hour === "16:00:00"? "selected" : ""}>16:00:00</option>
+                                <option value="17:00:00" selected={this.state.start_hour === "17:00:00"? "selected" : ""}>17:00:00</option>
+                                <option value="18:00:00" selected={this.state.start_hour === "18:00:00"? "selected" : ""}>18:00:00</option>
+                                <option value="19:00:00" selected={this.state.start_hour === "19:00:00"? "selected" : ""}>19:00:00</option>
                             </select>
                         </form>
                         
@@ -122,22 +133,23 @@ export class AddProduct extends Component {
                                     })
                                 }}>
                                 <option value="" disabled selected>Select end hour</option>
-                                <option value="10:00:00">10:00:00</option>
-                                <option value="11:00:00">11:00:00</option>
-                                <option value="12:00:00">12:00:00</option>
-                                <option value="13:00:00">13:00:00</option>
-                                <option value="14:00:00">14:00:00</option>
-                                <option value="15:00:00">15:00:00</option>
-                                <option value="16:00:00">16:00:00</option>
-                                <option value="17:00:00">17:00:00</option>
-                                <option value="18:00:00">18:00:00</option>
-                                <option value=">19:00:00">19:00:00</option>
+                                <option value="10:00:00" selected={this.state.end_hour === "10:00:00"? "selected" : ""}>10:00:00</option>
+                                <option value="11:00:00" selected={this.state.end_hour === "11:00:00"? "selected" : ""}>11:00:00</option>
+                                <option value="12:00:00" selected={this.state.end_hour === "12:00:00"? "selected" : ""}>12:00:00</option>
+                                <option value="13:00:00" selected={this.state.end_hour === "13:00:00"? "selected" : ""}>13:00:00</option>
+                                <option value="14:00:00" selected={this.state.end_hour === "14:00:00"? "selected" : ""}>14:00:00</option>
+                                <option value="15:00:00" selected={this.state.end_hour === "15:00:00"? "selected" : ""}>15:00:00</option>
+                                <option value="16:00:00" selected={this.state.end_hour === "16:00:00"? "selected" : ""}>16:00:00</option>
+                                <option value="17:00:00" selected={this.state.end_hour === "17:00:00"? "selected" : ""}>17:00:00</option>
+                                <option value="18:00:00" selected={this.state.end_hour === "18:00:00"? "selected" : ""}>18:00:00</option>
+                                <option value="19:00:00" selected={this.state.end_hour === "19:00:00"? "selected" : ""}>19:00:00</option>
                             </select>
                         </form>
                     </div>
                     <div className='add-labels'>Input category</div>
                     <div>
-                        <form action="/action_page.php">
+                        <form action="/action_page.php" 
+                        value={this.state.category_id}>
                             <select id="category" name="end-hour" className='add-box-input'
                                 onChange={(e) => {
                                     this.setState({
@@ -145,15 +157,16 @@ export class AddProduct extends Component {
                                     })
                                 }}>
                                 <option value="" disabled selected>Select category</option>
-                                <option value="1">Coffee</option>
-                                <option value="2">Noncoffee</option>
-                                <option value="3">Food</option>
+                                <option value="1" selected={this.state.category_id === 1? "selected" : ""}>Coffee</option>
+                                <option value="2" selected={this.state.category_id === 2? "selected" : ""}>Noncoffee</option>
+                                <option value="3" selected={this.state.category_id === 3? "selected" : ""}>Food</option>
                             </select>
                         </form>
                     </div>
                     <div className='add-labels'>Input Stock</div>
                     <div>
                         <input type="number" className='add-box-input' placeholder='Input stock'
+                        value={this.state.stock}
                             onChange={(e) => {
                                 this.setState({
                                     stock: e.target.value
@@ -165,6 +178,7 @@ export class AddProduct extends Component {
                     <div>
                         <div className='add-labels'>Name:</div>
                         <div><input type="text" className='add-type-input' placeholder='Type product name min. 50 characters'
+                        value={this.state.name}
                             onChange={(e) => {
                                 this.setState({
                                     name: e.target.value
@@ -174,6 +188,7 @@ export class AddProduct extends Component {
                     <div>
                         <div className='add-labels'>Price:</div>
                         <div><input type="number" className='add-type-input' placeholder='Type the price'
+                        value={this.state.price}
                             onChange={(e) => {
                                 this.setState({
                                     price: e.target.value
@@ -182,6 +197,7 @@ export class AddProduct extends Component {
                     <div>
                         <div className='add-labels'>Description:</div>
                         <div><input type="text" className='add-type-input' placeholder='Describe your product min. 150 characters'
+                        value={this.state.description}
                             onChange={(e) => {
                                 this.setState({
                                     description: e.target.value
@@ -280,20 +296,18 @@ export class AddProduct extends Component {
                         let body = new FormData();
                         body = {...body, ...data};
                         if(this.state.name === "" || this.state.size_id === "" || this.state.price === "" || this.state.category_id === "" || this.state.delivery_method_id === "" || this.state.description ==="" || this.state.start_hour === "" || this.state.end_hour === "" || this.state.stock === "" || this.state.picture === ""){
-                            console.log(data)
                             return this.setState({
                                 showUnsuccessModal: true
                             })
                         }
-                        console.log(body);
-                        this.addNewProduct(body)
+                        this.editProduct(body, this.state.id)
                         this.setState({
                             showSuccesModal: true
                         })
                     }}>
                         Save Product
                     </div>
-                    <div className='add-cancel-button' onClick={() => {navigate("/product")}}>Cancel</div>
+                    <div className='add-cancel-button' onClick={() => {navigate(`/product/details/${this.state.id}`)}}>Cancel</div>
                 </section>
             </main>
             <Footer/>
@@ -304,14 +318,13 @@ export class AddProduct extends Component {
                     </Modal.Title>
                 <Modal.Body className="modal-body">
                     <p>
-                    Product has been added.
+                    Product has been updated.
                     </p>
                 </Modal.Body>
                 <div className="modal-footer">
                     <button className="modal-button-close" onClick={() => {
                         this.setState({
                             showSuccesModal: false,
-                            isEdit: false,
                         })
                         navigate(`/product/details/${this.state.id}`)
                     }}>
@@ -331,8 +344,7 @@ export class AddProduct extends Component {
                 <div className="modal-footer">
                     <button className="modal-button-close" onClick={() => {
                         this.setState({
-                            showUnsuccessModal: false,
-                            isEdit: false,
+                            showUnsuccessModal: false
                         })
                     }}>
                         Okay
@@ -349,4 +361,4 @@ const mapStateToProps = (reduxState) => {
         cartContainer
     }
 }
-export default connect(mapStateToProps)(withParams(withNavigate(AddProduct)))
+export default connect(mapStateToProps)(withParams(withNavigate(EditProduct)))

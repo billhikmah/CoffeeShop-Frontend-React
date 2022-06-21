@@ -49,7 +49,8 @@ export class Product_details extends Component {
         
         if(localStorage.getItem("token")){
             this.setState({
-                isLogin: true
+                isLogin: true,
+                role: localStorage.getItem("role")
             })
         }
         this.getProductDetails(this.props.params.id)
@@ -99,7 +100,15 @@ export class Product_details extends Component {
                                 showModal: true
                             })                            
                         }}>Add to Cart</div>
+                        {this.state.role === "admin" ?
+                        <div className="ask-a-staff" onClick={() => {navigate(`/product/update/${this.state.id}`)}}>Edit Product</div>:
                         <div className="ask-a-staff">Ask a Staff</div>
+                        }
+                        {this.state.role === "admin" ?
+                        <div className="delete-product">Delete Product</div>:
+                        <></>
+                        }
+                        
                     </div>
                     <div className="container-2">
                         <div className="container-product-desc">

@@ -93,6 +93,7 @@
     border-radius: 20px;
     padding: 18px;
     margin-bottom: 25px;
+    cursor: pointer;
 }
 .add-to-chart:hover{
     background: #5c3521;
@@ -113,7 +114,41 @@
 
     background: rgba(255, 186, 51, 1);
     border-radius: 20px;
-    padding: 18px
+    padding: 18px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.ask-a-staff:hover{
+    background: rgb(233, 165, 28);
+    color: rgb(255, 255, 255);
+}
+.ask-a-staff:active{
+    background: rgb(184, 126, 11);
+    color: rgb(255, 255, 255);
+}
+.delete-product{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 38px;
+    color: rgb(255, 255, 255);
+
+    width: 250px;
+    height: 70px;
+
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 18px;
+    cursor: pointer;
+}
+.delete-product:hover{
+    color: rgb(255, 255, 255);
+    background: rgb(37, 37, 37);
+}
+.delete-product:active{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
 }
 .container-product-desc{
     width: 450px;
