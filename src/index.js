@@ -21,6 +21,7 @@ import EditProduct from "./pages/Edit-Product";
 
 import PrivateAuthRoute from "./components/PrivateRoute/PrivateAuthRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import PrivateAdminRoute from "./components/PrivateRoute/PrivateAdminRoute";
 
 function Router() {
   return(
@@ -38,8 +39,8 @@ function Router() {
           <Route path="/payment" element={<PrivateRoute><Payment/></PrivateRoute>}/>
           <Route path="/product/details/:id" element={<PrivateRoute><Productdetails/></PrivateRoute>}/>
           <Route path="/search" element={<PrivateRoute><Search/></PrivateRoute>}/>
-          <Route path="/product/new" element={<PrivateRoute><AddProduct/></PrivateRoute>}/>
-          <Route path="/product/update/:id" element={<PrivateRoute><EditProduct/></PrivateRoute>}/>
+          <Route path="/product/new" element={<PrivateAdminRoute><PrivateRoute><AddProduct/></PrivateRoute></PrivateAdminRoute>}/>
+          <Route path="/product/update/:id" element={<PrivateAdminRoute><PrivateRoute><EditProduct/></PrivateRoute></PrivateAdminRoute>}/>
         </Routes>
       </BrowserRouter>
     </ReduxProvider>
