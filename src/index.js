@@ -35,7 +35,7 @@ function Router() {
           <Route path="/forgot" element={<PrivateAuthRoute><Forgot/></PrivateAuthRoute>}/>
           
           <Route path="/profile" element={<PrivateRoute><Profile/></PrivateRoute>}/>
-          <Route path="/product" element={<PrivateRoute><Product/></PrivateRoute>}/>
+          <Route path="/product" element={<Product/>}/>
           <Route path="/history" element={<PrivateRoute><History/></PrivateRoute>}/>
           <Route path="/payment" element={<PrivateRoute><Payment/></PrivateRoute>}/>
           <Route path="/product/details/:id" element={<PrivateRoute><Productdetails/></PrivateRoute>}/>
