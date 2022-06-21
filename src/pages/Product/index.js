@@ -290,6 +290,7 @@ export class Product extends Component {
                                     order: this.state.order,
                                     page: page
                                 })
+                                window.scrollTo(0,0)
                             }}>{this.state.page - 2}</div>:
                             <div className="page-box-empty"></div>}
 
@@ -302,6 +303,7 @@ export class Product extends Component {
                                     order: this.state.order,
                                     page: page
                                 })
+                                window.scrollTo(0,0)
                             }}>{this.state.page - 1}</div>:
                             <div className="page-box-empty"></div>}
                             
@@ -316,6 +318,7 @@ export class Product extends Component {
                                     order: this.state.order,
                                     page: page
                                 })
+                                window.scrollTo(0,0)
                             }}>{this.state.page + 1 }</div>:
                             <div className="page-box-empty"></div>}
 
@@ -328,6 +331,7 @@ export class Product extends Component {
                                     order: this.state.order,
                                     page: page
                                 })
+                                window.scrollTo(0,0)
                             }}>{this.state.page + 2}</div>:
                             <div className="page-box-empty"></div>}</div>
 
@@ -342,6 +346,7 @@ export class Product extends Component {
                                         order: this.state.order,
                                         page: prev
                                     })
+                                    window.scrollTo(0,0)
                                 }}>
                                     Previous
                                 </div>:
